@@ -32,16 +32,20 @@
     });
   }
 
-  function updateInstructions() {
+  function updateInterfaceControls() {
     if ($carsList.children().length) {
       $('.no-cars').addClass('hide');
     } else {
       $('.no-cars').removeClass('hide');
     }
-  }
 
-  function initSelectBoxObserver() {
-    
+    if ($carsSelect.children().length) {
+      $('.no-available-cars').addClass('hide');
+      $carsSelect.removeClass('hide');
+    } else {
+      $('.no-available-cars').removeClass('hide');
+      $carsSelect.addClass('hide');
+    }
   }
 
   function refreshCarList() {
@@ -110,14 +114,13 @@
 
     sortAvailableCars();
     refreshAvailableCarsSelect();
-    initSelectBoxObserver();
 
     // Events
     $addToListButton.on('click', addCarToList);
     $carsList.on('click', 'li a', removeCarFromList);
 
     // Select Observer
-    observer = new MutationObserver(updateInstructions);
+    observer = new MutationObserver(updateInterfaceControls);
     observer.observe($carsSelect[0], {
       childList: true
     });

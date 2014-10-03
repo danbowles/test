@@ -3,20 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Your Dream Car list</title>
     <style>
-      li a {
-        display: none;
-        padding-left: 10px;
-      }
-
-      li:hover a {
-        display: inline;
-      }
-
-      .no-cars {
-        padding: 15px;
-      }
     </style>
   </head>
   <body>
@@ -26,6 +15,7 @@
         <div class="col-xs-4">
           <h3>Choose Your Cars</h3>
           <div class="form-group">
+            <p class='bg-warning no-available-cars hide'>You've added all available cars!</p>
             <select class="form-control" title="Choose a Dream Car">
             </select>
           </div>

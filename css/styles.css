@@ -1,0 +1,12 @@
+li a {
+  display: none;
+  padding-left: 10px;
+}
+
+li:hover a {
+  display: inline;
+}
+
+.bg-info, .bg-warning {
+  padding: 15px;
+}
